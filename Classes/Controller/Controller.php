@@ -473,8 +473,8 @@ class Controller extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 // 		$this->conf ['view.'] ['category'] = implode (',', $catIDs);
 		if (! $this->conf ['view.'] ['category']) {
 			$this->conf ['view.'] ['category'] = '0';
+			$category = $this->conf ['view.'] ['category'];
 		}
-		$category = $this->conf ['view.'] ['category'];
 		$this->conf ['view.'] ['allowedCategory'] = $this->conf ['view.'] ['category'];
 		
 		$piVarCategory = Controller::convertLinkVarArrayToList ($this->piVars ['category']);
