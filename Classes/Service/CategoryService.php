@@ -151,8 +151,8 @@ class CategoryService extends \TYPO3\CMS\Cal\Service\BaseService {
 		return $uid;
 	}
 	function getCategorySearchString($pidList, $includePublic) {
-		if ($this->conf ['category'] != '') {
-			$categorySearchString .= ' AND tx_cal_event_category_mm.uid_foreign IN (' . $this->conf ['category'] . ')';
+                if ($this->conf ['view.'] ['categoryMode'] == 3 && self::$categoryToFilter) {
+			$categorySearchString .= ' AND tx_cal_event_category_mm.uid_foreign IN (' . self::$categoryToFilter . ')';
 		}
 		
 		// Filter events by categories
